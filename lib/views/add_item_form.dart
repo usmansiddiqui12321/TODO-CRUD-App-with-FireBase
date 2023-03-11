@@ -30,7 +30,7 @@ class _AddItemFormState extends State<AddItemForm> {
     return SingleChildScrollView(
       child: Center(
         child: SizedBox(
-          width: MediaQuery.of(context).size.width * .5,
+          width: MediaQuery.of(context).size.width * .9,
           child: Form(
             key: addItemFormState,
             child: Column(

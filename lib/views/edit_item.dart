@@ -60,8 +60,7 @@ class _EditItemScreenState extends State<EditItemScreen> {
                   padding:
                       const EdgeInsets.only(left: 16, right: 16, bottom: 20),
                   child: SizedBox(
-                height: MediaQuery.of(context).size.width * .5,
-
+                    height: MediaQuery.of(context).size.height * 1,
                     child: EditItemForm(
                       currentDescription: widget.currentDescription,
                       currentTitle: widget.currentTitle,
