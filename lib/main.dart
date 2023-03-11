@@ -30,9 +30,9 @@ class MyApp extends StatelessWidget {
               }
             }
             if (snapshot.connectionState == ConnectionState.done) {
-              return LoginView();
+              return const LoginView();
             }
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           }),
     );
   }

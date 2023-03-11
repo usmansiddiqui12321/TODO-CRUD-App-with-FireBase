@@ -12,7 +12,7 @@ class ItemList extends StatelessWidget {
       stream: Database.readitems(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return Text("Error in Steam Builder");
+          return const Text("Error in Steam Builder");
         } else if (snapshot.hasData || snapshot.data != null) {
           return ListView.separated(
             separatorBuilder: (context, index) => const SizedBox(

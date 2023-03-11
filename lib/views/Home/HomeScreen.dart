@@ -31,11 +31,14 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           backgroundColor: AppColors.primaryButtonColor,
           child: const Icon(Icons.add, color: Colors.white, size: 32)),
-      body:  SafeArea(
+      body: SafeArea(
           child: Padding(
               padding: const EdgeInsets.only(left: 16, right: 16, bottom: 20),
-              child: SizedBox( 
-      width: MediaQuery.of(context).size.width * .8,child: ItemList()))),
+              child: Center(
+                child: SizedBox(
+                    width: MediaQuery.of(context).size.width * .9,
+                    child: const ItemList()),
+              ))),
     );
   }
 }
