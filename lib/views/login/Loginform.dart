@@ -9,17 +9,17 @@ import '../../custom_form_field.dart';
 import '../../res/Components/RoundButton.dart';
 import '../Home/HomeScreen.dart';
 
-class loginForm extends StatefulWidget {
-  const loginForm({super.key});
+class LoginForm extends StatefulWidget {
+  const LoginForm({super.key});
 
   @override
-  State<loginForm> createState() => _loginFormState();
+  State<LoginForm> createState() => _LoginFormState();
 }
 
-class _loginFormState extends State<loginForm> {
+class _LoginFormState extends State<LoginForm> {
   String getID = "";
   final loginVM = Get.put(LoginController());
-  final _loginFormkey = GlobalKey<FormState>();
+  final _LoginFormkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class _loginFormState extends State<loginForm> {
         height: MediaQuery.of(context).size.height * .3,
         width: MediaQuery.of(context).size.width * .6,
         child: Form(
-          key: _loginFormkey,
+          key: _LoginFormkey,
           child: Column(
             // ignore: prefer_const_literals_to_create_immutables
             children: [
@@ -53,13 +53,13 @@ class _loginFormState extends State<loginForm> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 0, right: 0),
-                child: Container(
+                padding:const EdgeInsets.only(left: 0, right: 0),
+                child: SizedBox(
                   width: double.maxFinite,
                   child: RoundButton(
                       onpress: () {
                         loginVM.uidFocusNode.value.unfocus();
-                        if (_loginFormkey.currentState!.validate()) {
+                        if (_LoginFormkey.currentState!.validate()) {
                           Database.userId = getID;
                           Get.to(const HomeScreen());
                         }
