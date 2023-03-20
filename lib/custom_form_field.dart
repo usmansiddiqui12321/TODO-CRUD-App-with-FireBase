@@ -9,7 +9,7 @@ class CustomFormField extends StatelessWidget {
       required this.keyboardType,
       required this.inputAction,
       required this.label,
-      required this.hint,    
+      required this.hint,
       required this.validator,
       this.isObscure = false,
       this.isCaptalized = false,
