@@ -16,8 +16,10 @@ class CustomFormField extends StatelessWidget {
       this.maxlines = 1,
       this.islabelEnabled = false,
       this.enabledBorderColor = AppColors.whiteColor,
-      required this.initial});
+      required this.initial,
+      this.hintColor = AppColors.blackColor});
   final TextEditingController controller;
+  final Color hintColor;
   final FocusNode focusNode;
   final TextInputType keyboardType;
   final TextInputAction inputAction;
@@ -47,7 +49,7 @@ class CustomFormField extends StatelessWidget {
           labelText: islabelEnabled ? label : null,
           labelStyle: const TextStyle(color: AppColors.primarytextColor),
           hintText: hint,
-          hintStyle: const TextStyle(color: AppColors.primaryColor),
+          hintStyle: TextStyle(color: hintColor),
           errorStyle:
               const TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
           focusedBorder: OutlineInputBorder(

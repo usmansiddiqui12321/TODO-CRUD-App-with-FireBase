@@ -3,6 +3,7 @@ import 'package:crud_firestore_app/Validators/database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../res/Colors/AppColors.dart';
 import 'EditItemForm.dart';
 import 'appbar.dart';
 
@@ -26,12 +27,25 @@ class _EditItemScreenState extends State<EditItemScreen> {
           FocusScope.of(context).unfocus();
         },
         child: Scaffold(
-          backgroundColor: Colors.grey[850],
+          // backgroundColor: Colors.grey[850],
           appBar: AppBar(
+            automaticallyImplyLeading: false,
             elevation: 0,
-            backgroundColor: Colors.grey[850],
+            // backgroundColor: Colors.grey[850],
             title: const Appbar(
               sectionName: 'CRUD',
+            ),
+            backgroundColor: Colors.transparent,
+            flexibleSpace: Container(
+              decoration: const BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.primaryColor,
+                    offset: Offset(0, 4),
+                    blurRadius: 1.2,
+                  ),
+                ],
+              ),
             ),
             actions: [
               // ignore: prefer_const_constructors

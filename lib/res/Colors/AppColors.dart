@@ -12,4 +12,7 @@ class AppColors {
   static const Color primarytextColor = Color(0xff000000);
 
   static const Color secondarytextColor = Color(0xfF444648);
+  static const Color logo = Color(0xffFFA715);
+
+
 }

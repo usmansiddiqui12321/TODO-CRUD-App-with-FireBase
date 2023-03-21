@@ -1,5 +1,4 @@
 import 'package:crud_firestore_app/res/Colors/AppColors.dart';
-import 'package:crud_firestore_app/views/login/login_page.dart';
 import 'package:crud_firestore_app/views/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';

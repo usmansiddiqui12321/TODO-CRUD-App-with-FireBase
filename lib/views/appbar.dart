@@ -14,12 +14,11 @@ class Appbar extends StatelessWidget {
         Image.asset("assets/firebase-logo.png", height: 20),
         const SizedBox(width: 8),
         const Text("Flutter Fire",
-            style:
-                TextStyle(color: AppColors.primaryButtonColor, fontSize: 18)),
+            style: TextStyle(color: AppColors.logo, fontSize: 25)),
         const SizedBox(width: 5),
         Text(sectionName,
             style: const TextStyle(
-                color: Color.fromARGB(255, 144, 201, 1), fontSize: 18))
+                color: Color.fromARGB(255, 144, 201, 1), fontSize: 25))
       ],
     );
   }

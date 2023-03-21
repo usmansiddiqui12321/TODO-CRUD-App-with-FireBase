@@ -44,46 +44,77 @@ class _AddItemFormState extends State<AddItemForm> {
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
                       const SizedBox(height: 24),
-                      const Text('title',
+                      const Text('Title',
                           style: TextStyle(
-                              color: AppColors.whiteColor,
+                              color: AppColors.blackColor,
                               fontSize: 22,
                               letterSpacing: 1,
                               fontWeight: FontWeight.bold)),
                       const SizedBox(height: 8),
-                      CustomFormField(
-                          initial: "",
-                          controller: fc.titleController.value,
-                          focusNode: fc.titlefocus.value,
-                          hint: 'Write Your Title',
-                          inputAction: TextInputAction.next,
-                          keyboardType: TextInputType.text,
-                          label: 'Title',
-                          validator: (value) {
-                            Validator.validateField(value: value);
-                            getTitle = value;
-                          }),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                              color: AppColors.primaryColor, width: 1.5),
+                          borderRadius: BorderRadius.circular(8),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: AppColors.primaryColor,
+                              offset: Offset(0, 4),
+                              blurRadius: 4,
+                            ),
+                          ],
+                        ),
+                        child: CustomFormField(
+                            initial: "",
+                            controller: fc.titleController.value,
+                            focusNode: fc.titlefocus.value,
+                            hint: 'Write Your Title',
+                            
+                            inputAction: TextInputAction.next,
+                            keyboardType: TextInputType.text,
+                            label: 'Title',
+                            validator: (value) {
+                              Validator.validateField(value: value);
+                              getTitle = value;
+                            }),
+                      ),
                       const SizedBox(height: 20),
                       const Text('Description',
                           style: TextStyle(
-                              color: AppColors.whiteColor,
+                              color: AppColors.blackColor,
                               fontSize: 22,
                               letterSpacing: 2,
                               fontWeight: FontWeight.bold)),
                       const SizedBox(height: 8),
-                      CustomFormField(
-                          maxlines: 10,
-                          initial: "",
-                          controller: fc.discriptionController.value,
-                          focusNode: fc.discriptionfocus.value,
-                          hint: 'Write Your Description',
-                          inputAction: TextInputAction.next,
-                          keyboardType: TextInputType.text,
-                          label: 'Description',
-                          validator: (value) {
-                            Validator.validateField(value: value);
-                            getDescription = value;
-                          }),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                              color: AppColors.primaryColor, width: 1.5),
+                          borderRadius: BorderRadius.circular(8),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: AppColors.primaryColor,
+                              offset: Offset(0, 4),
+                              blurRadius: 4,
+                            ),
+                          ],
+                        ),
+                        child: CustomFormField(
+                            maxlines: 10,
+                            initial: "",
+                            controller: fc.discriptionController.value,
+                            focusNode: fc.discriptionfocus.value,
+                            hint: 'Write Your Description',
+                            inputAction: TextInputAction.next,
+                            keyboardType: TextInputType.text,
+                            label: 'Description',
+                            validator: (value) {
+                              Validator.validateField(value: value);
+                              getDescription = value;
+                            }),
+                      ),
                     ],
                   ),
                 ),

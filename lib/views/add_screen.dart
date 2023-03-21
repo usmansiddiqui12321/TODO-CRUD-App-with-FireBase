@@ -3,6 +3,7 @@ import 'package:crud_firestore_app/views/add_item_form.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../res/Colors/AppColors.dart';
 import 'appbar.dart';
 
 class AddScreen extends StatefulWidget {
@@ -22,12 +23,27 @@ class _AddScreenState extends State<AddScreen> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        backgroundColor: Colors.grey[850],
+        backgroundColor: AppColors.whiteColor,
         appBar: AppBar(
+          iconTheme: const IconThemeData(color: AppColors.whiteColor),
+          automaticallyImplyLeading: true,
+
           elevation: 0,
-          backgroundColor: Colors.grey[850],
+          // backgroundColor: Colors.grey[850],
           title: const Appbar(
             sectionName: 'CRUD',
+          ),
+          backgroundColor: Colors.transparent,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.primaryColor,
+                  offset: Offset(0, 4),
+                  blurRadius: 1.2,
+                ),
+              ],
+            ),
           ),
         ),
         body: SafeArea(

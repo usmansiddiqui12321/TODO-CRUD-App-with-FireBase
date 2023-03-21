@@ -43,44 +43,74 @@ class _EditItemFormState extends State<EditItemForm> {
                   const SizedBox(height: 24),
                   const Text('title',
                       style: TextStyle(
-                          color: AppColors.whiteColor,
+                          color: AppColors.blackColor,
                           fontSize: 22,
                           letterSpacing: 1,
                           fontWeight: FontWeight.bold)),
                   const SizedBox(height: 8),
-                  CustomFormField(
-                      controller: fc.titleController.value,
-                      initial: widget.currentTitle,
-                      focusNode: fc.titlefocus.value,
-                      hint: 'Write Your Title',
-                      inputAction: TextInputAction.next,
-                      keyboardType: TextInputType.text,
-                      label: 'Title',
-                      validator: (value) {
-                        Validator.validateField(value: value);
-                        updateTitle = value;
-                      }),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
+                      border:
+                          Border.all(color: AppColors.primaryColor, width: 1.5),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: AppColors.primaryColor,
+                          offset: Offset(0, 4),
+                          blurRadius: 4,
+                        ),
+                      ],
+                    ),
+                    child: CustomFormField(
+                        controller: fc.titleController.value,
+                        initial: widget.currentTitle,
+                        focusNode: fc.titlefocus.value,
+                        hint: 'Write Your Title',
+                        inputAction: TextInputAction.next,
+                        keyboardType: TextInputType.text,
+                        label: 'Title',
+                        validator: (value) {
+                          Validator.validateField(value: value);
+                          updateTitle = value;
+                        }),
+                  ),
                   const SizedBox(height: 20),
                   const Text('Description',
                       style: TextStyle(
-                          color: AppColors.whiteColor,
+                          color: AppColors.blackColor,
                           fontSize: 22,
                           letterSpacing: 2,
                           fontWeight: FontWeight.bold)),
                   const SizedBox(height: 8),
-                  CustomFormField(
-                      initial: widget.currentDescription,
-                      maxlines: 10,
-                      controller: fc.discriptionController.value,
-                      focusNode: fc.discriptionfocus.value,
-                      hint: 'Write Your Description',
-                      inputAction: TextInputAction.next,
-                      keyboardType: TextInputType.text,
-                      label: 'Description',
-                      validator: (value) {
-                        Validator.validateField(value: value);
-                        updateDescription = value;
-                      }),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border:
+                          Border.all(color: AppColors.primaryColor, width: 1.5),
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: AppColors.primaryColor,
+                          offset: Offset(0, 4),
+                          blurRadius: 4,
+                        ),
+                      ],
+                    ),
+                    child: CustomFormField(
+                        initial: widget.currentDescription,
+                        maxlines: 10,
+                        controller: fc.discriptionController.value,
+                        focusNode: fc.discriptionfocus.value,
+                        hint: 'Write Your Description',
+                        inputAction: TextInputAction.next,
+                        keyboardType: TextInputType.text,
+                        label: 'Description',
+                        validator: (value) {
+                          Validator.validateField(value: value);
+                          updateDescription = value;
+                        }),
+                  ),
                 ],
               ),
             ),
