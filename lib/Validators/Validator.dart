@@ -6,7 +6,7 @@ class Validator {
     return null;
   }
 
-  static String? validateUserID({required String uid}) {
+  static String? validateUserID({required String uid }) {
     if (uid.isEmpty) {
       return 'User ID can not be Empty';
     } else if (uid.length <= 5) {

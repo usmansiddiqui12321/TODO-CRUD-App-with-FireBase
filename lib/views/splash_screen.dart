@@ -36,6 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
             repeat: true,
             reverse: true,
             height: 300,
+            frameRate: FrameRate(60),
             fit: BoxFit.cover,
           ),
         ),

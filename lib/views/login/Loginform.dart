@@ -45,9 +45,10 @@ class _LoginFormState extends State<LoginForm> {
                         label: 'Unique User ID',
                         hint: 'Enter Unique Identifier',
                         validator: (value) {
-                          Validator.validateUserID(uid: value);
-
                           getID = value;
+                          return Validator.validateUserID(uid: value );
+
+                        
                         })
                   ],
                 ),
@@ -59,11 +60,16 @@ class _LoginFormState extends State<LoginForm> {
                   child: RoundButton(
                       onpress: () {
                         loginVM.uidFocusNode.value.unfocus();
-                        if (_LoginFormkey.currentState!.validate() && loginVM.uidController != null) {
+                        if (_LoginFormkey.currentState!.validate() &&
+                            loginVM.uidController != null) {
                           Database.userId = getID;
                           Get.to(const HomeScreen());
+                        } else {
+                          const Text(
+                            "Please Enter Something",
+                            style: TextStyle(color: Colors.red),
+                          );
                         }
-                        else{const Text("Please Enter Something",style: TextStyle(color: Colors.red),);}
                       },
                       title: "Login"),
                 ),
