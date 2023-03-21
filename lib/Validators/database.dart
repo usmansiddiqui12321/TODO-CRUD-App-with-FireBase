@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 final CollectionReference _mainCollection = _firestore.collection('notes');
@@ -46,9 +47,14 @@ class Database {
   static Future<void> deleteItem({required String docId}) async {
     DocumentReference documentReference =
         _mainCollection.doc(userId).collection('items').doc(docId);
-    await documentReference
-        .delete()
-        .whenComplete(() => print("note item deleted from database"))
-        .catchError((e) => print(e));
+    await documentReference.delete().whenComplete(() {
+      if (kDebugMode) {
+        print("note item deleted from database");
+      }
+    }).catchError((e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    });
   }
 }

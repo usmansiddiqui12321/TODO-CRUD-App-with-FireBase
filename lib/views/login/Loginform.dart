@@ -30,7 +30,6 @@ class _LoginFormState extends State<LoginForm> {
         child: Form(
           key: _LoginFormkey,
           child: Column(
-            // ignore: prefer_const_literals_to_create_immutables
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8, bottom: 28),
@@ -60,16 +59,11 @@ class _LoginFormState extends State<LoginForm> {
                   child: RoundButton(
                       onpress: () {
                         loginVM.uidFocusNode.value.unfocus();
-                        if (_LoginFormkey.currentState!.validate() &&
-                            loginVM.uidController != null) {
+                        if (_LoginFormkey.currentState!.validate() && loginVM.uidController != null) {
                           Database.userId = getID;
                           Get.to(const HomeScreen());
-                        } else {
-                          const Text(
-                            "Please Enter Something",
-                            style: TextStyle(color: Colors.red),
-                          );
                         }
+                        else{const Text("Please Enter Something",style: TextStyle(color: Colors.red),);}
                       },
                       title: "Login"),
                 ),

@@ -39,9 +39,7 @@ class _AddItemFormState extends State<AddItemForm> {
                   padding:
                       const EdgeInsets.only(left: 16, right: 16, bottom: 20),
                   child: Column(
-                    // ignore: prefer_const_literals_to_create_immutables
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    // ignore: prefer_const_literals_to_create_immutables
                     children: [
                       const SizedBox(height: 24),
                       const Text('Title',
@@ -70,7 +68,7 @@ class _AddItemFormState extends State<AddItemForm> {
                             controller: fc.titleController.value,
                             focusNode: fc.titlefocus.value,
                             hint: 'Write Your Title',
-                            
+
                             inputAction: TextInputAction.next,
                             keyboardType: TextInputType.text,
                             label: 'Title',

@@ -21,7 +21,7 @@ class EditItemForm extends StatefulWidget {
 }
 
 class _EditItemFormState extends State<EditItemForm> {
-  final fc = Get.put(FormController()); //FormController
+  final fc = Get.put(FormController());
 
   String updateTitle = '';
   String updateDescription = '';
@@ -36,9 +36,7 @@ class _EditItemFormState extends State<EditItemForm> {
             Padding(
               padding: const EdgeInsets.only(left: 16, right: 16, bottom: 20),
               child: Column(
-                // ignore: prefer_const_literals_to_create_immutables
                 crossAxisAlignment: CrossAxisAlignment.start,
-                // ignore: prefer_const_literals_to_create_immutables
                 children: [
                   const SizedBox(height: 24),
                   const Text('title',
@@ -98,18 +96,19 @@ class _EditItemFormState extends State<EditItemForm> {
                       ],
                     ),
                     child: CustomFormField(
-                        initial: widget.currentDescription,
-                        maxlines: 10,
-                        controller: fc.discriptionController.value,
-                        focusNode: fc.discriptionfocus.value,
-                        hint: 'Write Your Description',
-                        inputAction: TextInputAction.next,
-                        keyboardType: TextInputType.text,
-                        label: 'Description',
-                        validator: (value) {
-                          Validator.validateField(value: value);
-                          updateDescription = value;
-                        }),
+                      initial: widget.currentDescription,
+                      maxlines: 10,
+                      controller: fc.discriptionController.value,
+                      focusNode: fc.discriptionfocus.value,
+                      hint: 'Write Your Description',
+                      inputAction: TextInputAction.next,
+                      keyboardType: TextInputType.text,
+                      label: 'Description',
+                      validator: (value) {
+                        Validator.validateField(value: value);
+                        updateDescription = value;
+                      },
+                    ),
                   ),
                 ],
               ),
@@ -133,7 +132,7 @@ class _EditItemFormState extends State<EditItemForm> {
                     title: 'Update Item',
                     textColor: AppColors.whiteColor,
                     buttonColor: AppColors.primaryButtonColor,
-                  )
+                  ),
           ],
         ),
       ),

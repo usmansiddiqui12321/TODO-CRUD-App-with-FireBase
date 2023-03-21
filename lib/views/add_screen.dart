@@ -29,7 +29,6 @@ class _AddScreenState extends State<AddScreen> {
           automaticallyImplyLeading: true,
 
           elevation: 0,
-          // backgroundColor: Colors.grey[850],
           title: const Appbar(
             sectionName: 'CRUD',
           ),

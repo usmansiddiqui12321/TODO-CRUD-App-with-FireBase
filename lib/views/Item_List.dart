@@ -41,7 +41,7 @@ class ItemList extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(8),
-                    boxShadow: const[
+                    boxShadow: const [
                       BoxShadow(
                         color: AppColors.primaryColor,
                         offset: Offset(0, 4),
@@ -83,9 +83,8 @@ class ItemList extends StatelessWidget {
             },
           );
         }
-        // ignore: prefer_const_constructors
-        return Center(
-          child: const CircularProgressIndicator(
+        return const Center(
+          child: CircularProgressIndicator(
             valueColor: AlwaysStoppedAnimation(Colors.orangeAccent),
           ),
         );
