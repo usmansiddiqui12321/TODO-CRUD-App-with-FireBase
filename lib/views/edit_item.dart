@@ -27,11 +27,9 @@ class _EditItemScreenState extends State<EditItemScreen> {
           FocusScope.of(context).unfocus();
         },
         child: Scaffold(
-          // backgroundColor: Colors.grey[850],
           appBar: AppBar(
-            automaticallyImplyLeading: false,
+            iconTheme: const IconThemeData(color: AppColors.whiteColor),
             elevation: 0,
-            // backgroundColor: Colors.grey[850],
             title: const Appbar(
               sectionName: 'CRUD',
             ),
