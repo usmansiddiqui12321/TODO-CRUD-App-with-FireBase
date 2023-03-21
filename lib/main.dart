@@ -1,4 +1,5 @@
 import 'package:crud_firestore_app/views/login/login_page.dart';
+import 'package:crud_firestore_app/views/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
               }
             }
             if (snapshot.connectionState == ConnectionState.done) {
-              return const LoginView();
+              return const SplashScreen();
             }
             return const CircularProgressIndicator();
           }),

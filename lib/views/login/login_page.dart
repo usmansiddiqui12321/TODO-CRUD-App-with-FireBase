@@ -7,14 +7,22 @@ import '../../Controllers/LoginControllers.dart';
 import 'Loginform.dart';
 
 class LoginView extends StatefulWidget {
-  const LoginView({super.key});
+  const LoginView({Key? key}) : super(key: key);
 
   @override
   State<LoginView> createState() => _LoginViewState();
 }
 
 class _LoginViewState extends State<LoginView> {
-  final loginVM = Get.put(LoginController());
+  late final LoginController loginVM;
+  late final Future<void> _initFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    loginVM = Get.put(LoginController());
+    _initFuture = loginVM.initializeFirebase();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +35,9 @@ class _LoginViewState extends State<LoginView> {
         backgroundColor: AppColors.whiteColor,
         body: SafeArea(
           child: Stack(
-            // ignore: prefer_const_literals_to_create_immutables
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, bottom: 20),
+                padding: const EdgeInsets.only(left: 16, right: 16, bottom: 10),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -42,7 +49,7 @@ class _LoginViewState extends State<LoginView> {
                           Flexible(
                               flex: 1,
                               child: Image.asset('assets/firebase-logo.png',
-                                  height: 160)),
+                                  height: 200)),
                           const SizedBox(height: 20),
                           const Text(
                             "Flutter Fire",
@@ -56,19 +63,21 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                     FutureBuilder(
-                        future: loginVM.initializeFirebase(),
-                        builder: (context, snapshot) {
-                          if (snapshot.hasError) {
-                            return const Text("Error h bhai error");
-                          } else if (snapshot.connectionState ==
-                              ConnectionState.done) {
-                            return const LoginForm();
-                          } else {
-                            return const CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                    Colors.orangeAccent));
-                          }
-                        })
+                      future: _initFuture,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasError) {
+                          return const Text("Error h bhai error");
+                        } else if (snapshot.connectionState ==
+                            ConnectionState.done) {
+                          return const LoginForm();
+                        } else {
+                          return const CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                                Colors.orangeAccent),
+                          );
+                        }
+                      },
+                    ),
                   ],
                 ),
               )
