@@ -47,21 +47,28 @@ class _LoginFormState extends State<LoginForm> {
                         hint: 'Enter Unique Identifier',
                         validator: (value) {
                           Validator.validateUserID(uid: value);
+
                           getID = value;
                         })
                   ],
                 ),
               ),
               Padding(
-                padding:const EdgeInsets.only(left: 0, right: 0),
+                padding: const EdgeInsets.only(left: 0, right: 0),
                 child: SizedBox(
                   width: double.maxFinite,
                   child: RoundButton(
                       onpress: () {
                         loginVM.uidFocusNode.value.unfocus();
-                        if (_LoginFormkey.currentState!.validate()) {
+                        if (_LoginFormkey.currentState!.validate() &&
+                            loginVM.uidController != null) {
                           Database.userId = getID;
                           Get.to(const HomeScreen());
+                        } else {
+                          const Text(
+                            "Please Enter Something",
+                            style: TextStyle(color: Colors.red),
+                          );
                         }
                       },
                       title: "Login"),
